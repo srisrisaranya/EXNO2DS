@@ -62,89 +62,98 @@ df.describe()
 ```
 df.nunique()
 ```
-![lab02(5)](https://github.com/AkshayalakshmiVS/EXNO2DS/assets/128115963/f88906c6-9297-492f-9503-3f61d38ac697)
+![image](https://github.com/user-attachments/assets/9b129701-21cf-48c9-ad3b-85cf8962eddd)
+
 
 ```
 df["Survived"].value_counts()
 ```
-![lab02(7)](https://github.com/AkshayalakshmiVS/EXNO2DS/assets/128115963/00a55ce8-85c3-4cec-bd0f-be69931bdca1)
+![image](https://github.com/user-attachments/assets/ea036f49-9e55-46b9-83ca-94aa03d9401f)
 
 ```
 per=(df["Survived"].value_counts()/df.shape[0]*100).round(2)
 per
 ```
-![lab02(8)](https://github.com/AkshayalakshmiVS/EXNO2DS/assets/128115963/90af63f2-93ee-449b-bc9f-a1506e776d20)
+![image](https://github.com/user-attachments/assets/85103464-9aad-4207-8bcb-1e09ffa2cd52)
+
 
 ```
 sns.countplot(data=df,x="Survived")
 ```
 
-![lab02(9)](https://github.com/AkshayalakshmiVS/EXNO2DS/assets/128115963/823090a7-7559-45ff-a7e1-a41ecce49ae0)
+![image](https://github.com/user-attachments/assets/093dfd81-f4db-421e-84c9-20918fb5ff71)
+
 
 ```
 df
 ```
-![lab02(10)](https://github.com/AkshayalakshmiVS/EXNO2DS/assets/128115963/9510f440-d240-4cb1-84c5-533ae425e724)
+![image](https://github.com/user-attachments/assets/c0078901-c724-4992-84f3-d4c092f1c9ec)
+
 
 ```
 df.Pclass.unique()
 ```
 
-![lab02(11)](https://github.com/AkshayalakshmiVS/EXNO2DS/assets/128115963/14faf5e5-c191-4eaa-8549-2699d83198c0)
+![image](https://github.com/user-attachments/assets/d1ef664b-c756-4f7a-914f-67dc1890a60a)
+
 
 ```
 df.rename(columns={'sex':'Gender'},inplace=True)
 df
 ```
-![lab02(12)](https://github.com/AkshayalakshmiVS/EXNO2DS/assets/128115963/52c3b934-6a43-4f63-9252-d7d0d9bb5e1d)
+![image](https://github.com/user-attachments/assets/37e6ac63-33da-41f5-b65c-1ef3a50012ce)
+
 
 ```
 import seaborn as sns
 df=pd.read_csv("/content/titanic_dataset.csv")
 sns.catplot(x="Sex",col='Survived',kind="count",data=df,height=5, aspect=.7)
 ```
-![lab02(13)](https://github.com/AkshayalakshmiVS/EXNO2DS/assets/128115963/76d50ddb-0064-4867-af85-62136eb56edf)
+![image](https://github.com/user-attachments/assets/c5392995-24c3-4790-835e-f4093e2f5e4b)
+
 
 ```
 sns.catplot(x='Survived',hue='Sex',data=df,kind='count')
 ```
-![lab02(14)](https://github.com/AkshayalakshmiVS/EXNO2DS/assets/128115963/3296021c-6de4-4ed8-9a04-4937be5ce50c)
+![image](https://github.com/user-attachments/assets/b97f59a2-c0ad-4466-b55e-a148a605e7b5)
+
 
 ```
 df.boxplot(column='Age',by="Survived")
 ```
-![lab02(15)](https://github.com/AkshayalakshmiVS/EXNO2DS/assets/128115963/e10fe226-cce7-4eaf-9b5f-dbac11d20928)
+![image](https://github.com/user-attachments/assets/689c86e3-8665-46f1-97e3-c9a2606d2eed)
+
 
 ```
 sns.scatterplot(x=df['Age'],y=df["Fare"])
 ```
-![lab02(16)](https://github.com/AkshayalakshmiVS/EXNO2DS/assets/128115963/98e64c92-8ff9-4276-8de1-6c53b369ab92)
+![image](https://github.com/user-attachments/assets/cb0804a9-923e-4a08-bcb8-ac40b65341ae)
+
 ```
 import matplotlib.pyplot as plt
 fig,ax1=plt.subplots(figsize=(8,5))
 pt=sns.boxplot(ax=ax1,x='Pclass',y='Age',hue='Sex',data=df)
 ```
-![lab02(17)](https://github.com/AkshayalakshmiVS/EXNO2DS/assets/128115963/154a4ef6-44c9-4451-8f71-c6c72957a48e)
+![image](https://github.com/user-attachments/assets/b55fc3cf-b77e-4cf2-a3e2-1de5f7ffdbf2)
+
 
 ```
 sns.catplot(data=df,col='Survived',x='Sex',hue='Pclass',kind='count')
 ```
-![lab02(18)](https://github.com/AkshayalakshmiVS/EXNO2DS/assets/128115963/34e25f68-d33b-441d-a781-73bf9fe64e80)
-
-
+![image](https://github.com/user-attachments/assets/6bcb9b90-6c7f-4699-9bea-6302535c92bd)
 
 ```
 import seaborn as sns
 corr=df.corr()
 sns.heatmap(corr,annot=True)
 ```
-![lab02(19)](https://github.com/AkshayalakshmiVS/EXNO2DS/assets/128115963/26c8e6cf-a84f-46ea-870f-f5e8a43924af)
+![image](https://github.com/user-attachments/assets/bffd46df-1f86-4868-af9e-b3fefe2384f5)
 
 
 ```
 sns.pairplot(df)
 ```
-![lab02(20)](https://github.com/AkshayalakshmiVS/EXNO2DS/assets/128115963/d8c0bcfb-1a6c-4dbd-a2a1-6bc00544c649)
+![image](https://github.com/user-attachments/assets/4e3d4713-4432-4bb1-a37a-45cbbccd6710)
 
 
 
