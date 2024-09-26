@@ -158,4 +158,4 @@ sns.pairplot(df)
 
 
 # RESULT
-     Code are sucessfully executed.
+     Code are Sucessfully Executed.
